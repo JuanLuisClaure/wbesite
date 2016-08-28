@@ -1,1 +1,1 @@
-"es una website version sobre una porpuesta, seccion personas." 
+"es una website version sobre una porpuesta, seccion personas."
