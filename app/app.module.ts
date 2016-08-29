@@ -1,6 +1,11 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule }    from '@angular/http';
 import { rutasDeVistas } from './app.routing';
+
+// Imports for loading & configuring the in-memory web api
+import { InMemoryWebApiModule } from 'angular2-in-memory-web-api';
+import { InMemoryDataService }  from './data/in.memory.webservice';
 
 //=================================================================================
 //[[[[[[[[[[[[[[[[[[[CONTENEDOR Y SERVIDOR PRINCIPALES]]]]]]]]]]]]]]]]]]]]]]]]]]]]]]
@@ -36,9 +41,8 @@ import { contenedorCalculadora } from './pages/calculadora/calculadora.contenedo
 
 
 
-
 @NgModule({
-  imports:      [ BrowserModule, rutasDeVistas ],
+  imports:      [ BrowserModule, HttpModule, InMemoryWebApiModule.forRoot(InMemoryDataService), rutasDeVistas ],
   declarations: [
                   contenedorApp,
                   componenteApp,
@@ -50,6 +54,9 @@ import { contenedorCalculadora } from './pages/calculadora/calculadora.contenedo
                   contenedorCalculadora
 
 
+                ],
+ providers:     [
+                  InMemoryDataService,
                 ],
   bootstrap:    [ contenedorApp ]
 })

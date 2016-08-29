@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 import { componenteApp } from './pages/contenedor/servidor/app.componente';
+import { componenteHome } from './pages/contenedor/home/home.componente';
+
 
 
 
@@ -17,13 +19,13 @@ const appRoutes: Routes = [
 
   {
     path: '',
-    component: componenteApp
+    component:componenteHome
   },
 
 
   {
     path: 'home',
-    component: componenteApp
+    component:componenteHome
   },
   {
     path: 'login',
